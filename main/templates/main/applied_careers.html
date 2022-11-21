@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  Applied Careers Page
+{% endblock %}
+
+{% block content %}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Type</th>
+        <th scope="col">Location</th>
+        <th scope="col">Package</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for career in careers %}
+          {% include 'main/includes/career_modals.html' %}
+          <tr>
+            <td>{{ career.name }}</td>
+            <td><img alt="image" style="width:64px" src="{{ career.image_url }}"></td>
+            <td>{{ career.type }}</td>
+            <td>{{ career.location }}</td>
+            <td>{{ career.package }}LPA</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#Modal-MoreInfo{{ career.pk }}">
+                More Info
+              </button>
+            </td>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

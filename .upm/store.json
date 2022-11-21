@@ -1,0 +1,1 @@
+{"version":2,"languages":{"python-python3-poetry":{"specfileHash":"84c7b63f6a6c0b95c8724e4da1a5838e","lockfileHash":"b75d099b76562c0997a95d342ec004ed","guessedImports":["os-sys","pypdf2","spacy","nltk","requests"],"guessedImportsHash":"1149f92bd39f5e2b9d859edd03b3ae53"}}}

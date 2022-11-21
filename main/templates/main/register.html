@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content %}
+  <body class="text-center">
+    <form class="form-signin" method="POST">
+        {% csrf_token %}
+        <img class="mb-4" src="https://cdn.dribbble.com/users/1741046/screenshots/10863058/media/249fd94fcd101e31b7c6f2d272eceb8f.png?compress=1&resize=400x300" alt="" style="width:170px;height:170px; margin-top:25px;border-radius:50%;">
+        <h1 class="h3 mb-3 font-weight-normal">
+            Please Create your Account
+        </h1>
+
+        <!-- Form Fields -->
+        <label for="inputUsername" class="sr-only">
+            User Name
+        </label>
+        <input type="text" id="inputUsername" class="form-control" placeholder="User Name" name="username" required autofocus>
+        <br>
+
+        <label for="inputPassword1" class="sr-only">
+            Password
+        </label>
+        <input type="password" id="inputPassword1" class="form-control" placeholder="Password" name="password1" required autofocus>
+        <br>
+
+        <label for="inputPassword2" class="sr-only">
+            Password Confirmation
+        </label>
+        <input type="password" id="inputPassword2" class="form-control" placeholder="Confirm Password" name="password2" required autofocus>
+        <br>
+
+        <div class="checkbox mb-3">
+            <h6>Already have an Account?</h6>
+            <a class="btn btn-sm btn-secondary" href="{% url 'login' %}">Login</a>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
+    </form>
+    </body>
+{% endblock %}
